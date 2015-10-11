@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mascota</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+   <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <% if !flash[:notice].blank? %>
+        <div class="notice">
+          <h2><%= flash[:notice] %><h2>
+       </div>
+    <% end %>
+ <div class="container">
+    <header class="navbar navbar-static-top bs-docs-nav">
+     <div class="navbar-header">
+      <h1>mascota <small>Buscador de mascotas</small></h1>
+    </div>
+   </header>
+  <%= render 'layouts/header' %>
+   
+
+
+
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+ </div>
+
+</body>
+</html>

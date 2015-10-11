@@ -1,0 +1,20 @@
+<div id="filterrific_results">
+  <p>Se han encontrado <%= @pet.size %> mascotas que cumplen el criterio de búsqueda</p>
+            <% @pets.each do |pet| %>
+
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="item">
+                      <div class="img-peq">
+           <%= image_tag(pet.picture_url, :size => '250x250', :alt => 'imagen') if pet.picture? %>        </div>           
+                        <div class="info">
+                          <h3><%= pet.name %> | <%= pet.pet_type.name %></h3>
+                          <p>Raza: <%= pet.pet_type_breed.name %></p>
+                          <p>Años: <%= pet.age %> Sexo: <%= pet.gender %></p>
+                          <p><%= pet.province %></p>
+                          <p><%= link_to("Conocer más a ", {:action => 'show', :controller => 'list_pets', :id => pet.id}) %><%= pet.name %></p>
+                        </div>
+                    </div>
+                  </div>
+      <% end %>
+ </div>
+

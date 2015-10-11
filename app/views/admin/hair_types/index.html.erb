@@ -1,0 +1,22 @@
+<h1>Listado de tipos de pelo</h1>
+<%= link_to 'Nuevo tipo de pelo', new_hair_type_path %>
+<table class="table table-hover">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hair_types.each do |hair_type| %>
+  <tr>
+    <td><%= hair_type.name %></td>
+    <td><%= link_to 'Editar', edit_hair_type_path(hair_type) %></td>
+    <td><%= link_to 'Borrar', hair_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

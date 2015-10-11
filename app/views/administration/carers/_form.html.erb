@@ -1,0 +1,121 @@
+
+  <%= render :partial=>"layouts/errors_panel" , object: @carer %>
+  <p> Los campos marcados con asterisco son obligatorios.</p>
+  <div class="row">
+    <div class="col-lg-9 col-md-9">
+      <div class="row">
+        <div class="col-lg-3 col-md-3">
+         <div class="field">
+            <%= f.label(:name, "Nombre*") %><br />
+            <%= f.text_field :name, :class=>"form-control" %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="field">
+            <%= f.label(:last_name, "Apellidos*") %><br />
+            <%= f.text_field :last_name, :class=>"form-control" %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="field">
+            <%= f.label(:phone, "Teléfono") %><br />
+            <%= f.number_field :phone, :class=>"form-control" %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="field">
+            <%= f.label(:email, "Email*") %><br />
+            <%= f.text_field :email, :class=>"form-control" %>
+          </div>
+        </div>
+      </div>   <!--final del row -->
+      <div class="row">
+      <div class="col-lg-3 col-md-3">
+        <div class="field">
+          <%= f.label(:dni, "NIF (00000000A)*") %> <br />
+          <%= f.text_field :dni, :class=>"form-control" %>
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-3">
+       <div class="field"><br>
+         <%= f.label(:inactive, "Baja") %>: 
+         <%= f.check_box :inactive %>
+       </div>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <div class="field"><br>
+          <%= f.label(:locate, "Localizar") %><span>  </span><a data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a> 
+          <%= f.check_box :locate %>
+         </div>
+      </div>
+      </div><!-- Final del row -->
+      <div class="row">
+        <div class="col-lg-3 col-md-3">
+         <div class="field">
+            <%= f.label(:via, "Tipo de via") %><br />         
+           <%= f.select :via,  Carer::VIA_TYPES, {include_blank: false}, { :class=>"form-control chosen-select"} %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="field">
+            <%= f.label(:street, "Calle") %><br />
+            <%= f.text_field :street, :class=>"form-control" %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+         <div class="field">
+            <%= f.label(:province, "Provincia*") %><br />
+            <%= f.select(:province,
+               Province.options_for_select,
+              { include_blank: '- Provincia -' },
+              :class => "form-control chosen-select"
+            ) %>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="field">
+            <%= f.label(:postal_code, "Código postal") %><br />
+            <%= f.number_field :postal_code, :class=>"form-control" %>
+          </div>
+
+        </div><!-- final columna -->
+    
+   
+      </div>  <!--final del row -->
+
+    </div><!--final columna -->
+    <div class="col-lg-3 col-md-3">
+
+      <div class="field">
+          <%= f.label(:commentary, "Comentarios") %><br />
+          <%= f.text_area(:commentary, :rows=>5, :class=>"form-control") %>
+       </div>
+    </div><!--final columna -->
+  </div><!--final del row -->
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">¿Quieres que las personas que buscan una mascota la encuentren por la casa en la que está acogida?</h4>
+      </div>
+      <div class="modal-body">
+        Marcando la casilla "Localizar", en las búsquedas, las mascotas que estén acogidas por <%= @carer.name %> <%= @carer.last_name %> aparecerán en su provincia, en vez de en la provincia de la asociación.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div><!-- final del modal -->
+
+
+   
+
+ 
+
+
+
+
+
+
+

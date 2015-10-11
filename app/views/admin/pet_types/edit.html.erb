@@ -1,0 +1,14 @@
+<h1>Editar tipo de mascota</h1>
+<%= link_to '<< Volver', pet_types_path %>
+<%= form_for(@pet_type, url: pet_type_path(@pet_type)) do |f| %>
+
+    <%= render(:partial  => "form", :locals => {:f => f}) %>
+  <div class="form-buttons">
+    <%= submit_tag("Actualizar datos") %>
+
+</div>
+<% end %>
+
+
+
+

@@ -1,0 +1,15 @@
+<%= link_to '<< Volver', shelter_pets_path %>
+<div class "info">
+  <h3>Alta mascota</h3>
+
+
+    <%= form_for([@shelter, @pet], :url => {:action=>'create'}) do |f| %>
+    <%= render(:partial  => "form", :locals => {:f => f}) %>
+
+  <div class="form-buttons">
+  <%= submit_tag("Alta", {:class=>"btn btn-info"}) %>
+
+  </div>
+  <% end %>
+</div>
+

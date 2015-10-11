@@ -1,0 +1,12 @@
+<h1>Nuevo color</h1>
+
+<%= link_to '<< Volver', pet_type_colours_path %>
+ <%= form_for(:pet_type_colour, :url => {:action=>'create'}) do |f| %>
+  <%= render(:partial  => "form", :locals => {:f => f}) %>
+
+<div class="form-buttons">
+<%= submit_tag("Alta") %>
+
+</div>
+<% end %>
+

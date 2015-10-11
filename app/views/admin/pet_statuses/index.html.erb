@@ -1,0 +1,22 @@
+<h1>Listado de estados</h1>
+<%= link_to 'Nuevo estado', new_pet_status_path %>
+<table class="table table-hover">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pet_statuses.each do |pet_status| %>
+  <tr>
+    <td><%= pet_status.name %></td>
+    <td><%= link_to 'Editar', edit_pet_status_path(pet_status) %></td>
+    <td><%= link_to 'Borrar', pet_status, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

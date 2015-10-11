@@ -1,0 +1,12 @@
+<h1>Nuevo tipo de pelo</h1>
+<%= link_to '<< Volver', hair_types_path %>
+  <%= form_for(:hair_type, :url => {:action=>'create'}) do |f| %>
+  <%= render(:partial  => "form", :locals => {:f => f}) %>
+
+<div class="form-buttons">
+<%= submit_tag("Alta") %>
+
+</div>
+<% end %>
+
+

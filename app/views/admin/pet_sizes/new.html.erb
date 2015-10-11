@@ -1,0 +1,12 @@
+<h1>Alta nuevo tamaño</h1>
+<%= link_to '<< Volver', pet_sizes_path %>
+  <%= form_for(:pet_size, :url => {:action=>'create'}) do |f| %>
+  <%= render(:partial  => "form", :locals => {:f => f}) %>
+
+<div class="form-buttons">
+<%= submit_tag("Alta") %>
+
+</div>
+<% end %>
+
+

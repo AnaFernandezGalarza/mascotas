@@ -1,0 +1,62 @@
+# == Schema Information
+#
+# Table name: shelters
+#
+#  id                     :integer          not null, primary key
+#  nombre                 :string(255)
+#  usuario                :string(255)
+#  email                  :string(255)
+#  telefono               :integer
+#  web                    :string(255)
+#  requisitos_adopcion    :text
+#  descripcion_asociacion :text
+#  acogida                :boolean
+#  detalles_acogida       :text
+#  informacion_donaciones :text
+#  voluntariado           :boolean
+#  detalles_voluntariado  :text
+#  calle                  :string(255)
+#  provincia              :string(255)
+#  cp                     :integer
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  password_digest        :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  usuario: MyString
+  email: MyString
+  telefono: 1
+  password: MyString
+  web: MyString
+  requisitos_adopcion: MyText
+  descripcion_asociacion: MyText
+  acogida: false
+  detalles_acogida: MyText
+  informacion_donaciones: MyText
+  voluntariado: false
+  detalles_voluntariado: false
+  calle: MyString
+  provincia: MyString
+  cp: 1
+
+two:
+  nombre: MyString
+  usuario: MyString
+  email: MyString
+  telefono: 1
+  password: MyString
+  web: MyString
+  requisitos_adopcion: MyText
+  descripcion_asociacion: MyText
+  acogida: false
+  detalles_acogida: MyText
+  informacion_donaciones: MyText
+  voluntariado: false
+  detalles_voluntariado: false
+  calle: MyString
+  provincia: MyString
+  cp: 1
